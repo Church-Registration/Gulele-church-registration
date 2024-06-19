@@ -1,16 +1,24 @@
 // Header.js
 import React from "react";
-import "./Css/Header.css"; // Assuming you will create a Header.css for styling
+import "./Css/Header.css";
+import MainContent from "./MainContent";
+import { FaBars } from "react-icons/fa";
 
-export default function Header() {
+export default function Header({ isOpen, toggleSidebar }) {
   return (
-    <header className="header">
-      <div className="header-content">
-        <div className="title">Gulele Garden Local</div>
-        <div className="search">
-          <input type="text" placeholder="Search" />
+    <div className={`container ${isOpen ? "sidebar-open" : ""}`}>
+      <header className={`header ${isOpen ? "sidebar-open" : ""}`}>
+        <div className="header-content">
+          <button onClick={toggleSidebar} className="menu-btn">
+            <FaBars />
+          </button>
+          <div className="title">Gulele Garden Local</div>
+          <div className="search">
+            <input type="text" placeholder="Search" />
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+      <MainContent />
+    </div>
   );
 }

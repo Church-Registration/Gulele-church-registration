@@ -1,5 +1,7 @@
 /* MainContent.css */
 .main-content {
-  padding: 20px;
+  margin-top: 50px;
+  margin-left: 234px;
   flex: 1;
+  margin-right: 250px;
 }
